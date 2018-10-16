@@ -1,19 +1,16 @@
-
 /* 
  * Contact: team@fusioncode.ai
  *
  *
- * Project  - sign in UNIT TESTS
+ * Project  - sign_in UNIT TESTS
  * Application Client
  * fusioncodevideo
 */
 
-
-
-            /* reset password view has a Label located at the bottom center of the view with text don't have an account? */
-            it('reset password view has a Label located at the bottom center of the view with text don't have an account?', () => {
-               /* ToDo developer needs to complete unit test 
-               reset password view has a Label located at the bottom center of the view with text don't have an account?
+/* signup view has Label located at the bottom center of the view, text needs identified */
+it("signup view has Label located at the bottom center of the view, text needs identified", () => {
+  /* ToDo developer needs to complete unit test 
+               signup view has Label located at the bottom center of the view, text needs identified
                uncomment below and update the code to test
                 //instance.action(function(error) {
                 //  if (error) throw error;
@@ -21,5 +18,4 @@
                 //});
                 done();
                */
-            });
-            
+})
