@@ -12,10 +12,7 @@ signup view has Label located at the top left of the view, text needs identified
 signup view has Label located at the top left of the view, text needs identified
 signup view has Label located at the top left of the view, text needs identified
 signup view has Label located at the mid-top left of the view, text needs identified
-signup view has Label located at the mid-top left of the view, text needs identified
-signup view has Label located at the main area left of the view, text needs identified
-the signup view has a Pager located at the main area left of the view, correct text needs defined
-signup view has Label located at the bottom center of the view, text needs identified
+the signup view has a Pager located at the mid-top left of the view, correct text needs defined
 signup view has Label located at the bottom center of the view, text needs identified
 
 */
@@ -58,15 +55,15 @@ import { Row, Col , Button } from 'reactstrap';
                  
                     <Col md={12}>
 
-                        				{/*<!-- TODO: Confirm label text --> */}
+                        				<Button className="btn "><!-- --></Button> 
 
 			</Col>
 
 			<Col md={12}>
-				{/* <!-- TODO: Create unit test for \iup action --> */}
+				{/* <!-- TODO: Create unit test for sign_in action --> */}
 				<Button 
                         className="btn btn-lg btn-block " 
-                        onClick={() => this.\iup()}>\iup</Button> 
+                        onClick={() => this.sign_in()}>sign in</Button> 
 
 			</Col>
 
