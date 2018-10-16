@@ -17,7 +17,7 @@
         
         import search from './components/search.jsx'
 import signup from './components/signup.jsx'
-import menu from './components/menu.jsx'
+import notifications from './components/notifications.jsx'
 import history from './components/history.jsx'
 import edit_profile from './components/edit profile.jsx'
 import back_action from './components/back_action.jsx'
@@ -46,7 +46,7 @@ import live from './components/live.jsx'
                         <Route path "/" component={search}
                         <Route path="/search" component={search} /> 
 ,<Route path="/signup" component={signup} /> 
-,<Route path="/menu" component={menu} /> 
+,<Route path="/notifications" component={notifications} /> 
 ,<Route path="/history" component={history} /> 
 ,<Route path="/edit_profile" component={edit_profile} /> 
 ,<Route path="/back_action" component={back_action} /> 
