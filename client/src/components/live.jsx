@@ -7,20 +7,14 @@ created by: Anni on FusionCode
 // Component Requirements
 //----------------------------------------------------------------------------------------------------------
 
-the signup view has a status bar located at the very-top across the full width of the view
-signup view has Label located at the top left of the view, text needs identified
-signup view has Label located at the top left of the view, text needs identified
-signup view has Label located at the top left of the view, text needs identified
-signup view has Label located at the mid-top left of the view, text needs identified
-the signup view has a Pager located at the mid-top left of the view, correct text needs defined
-signup view has Label located at the bottom center of the view, text needs identified
+
 
 */
         
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Row, Col , Button } from 'reactstrap';
+import { Row, Col   } from 'reactstrap';
         
         
         import {  }  from '../actions/liveActions.js'; 
@@ -55,19 +49,7 @@ import { Row, Col , Button } from 'reactstrap';
                  
                     <Col md={12}>
 
-                        				<Button className="btn "><!-- --></Button> 
-
-			</Col>
-
-			<Col md={12}>
-				{/* <!-- TODO: Create unit test for sign_in action --> */}
-				<Button 
-                        className="btn btn-lg btn-block " 
-                        onClick={() => this.sign_in()}>sign in</Button> 
-
-			</Col>
-
-
+                        
                            
    
                     </Col> 
