@@ -20,7 +20,7 @@ import signup from './components/signup.jsx'
 import followers from './components/followers.jsx'
 import history from './components/history.jsx'
 import edit_profile from './components/edit profile.jsx'
-import back_action from './components/back action.jsx'
+import back_action from './components/back_action.jsx'
 import signup from './components/signup.jsx'
 import live from './components/live.jsx'
        
