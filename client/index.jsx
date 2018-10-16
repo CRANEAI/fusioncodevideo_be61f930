@@ -43,15 +43,15 @@ import live from './components/live.jsx'
         
                 <Router basename="/" history={ history } >
                     <Switch>
-                        <Route path "/" component={search}
+                        <Route path="/" component={search} />
                         <Route path="/search" component={search} /> 
-,<Route path="/signup" component={signup} /> 
-,<Route path="/menu" component={menu} /> 
-,<Route path="/history" component={history} /> 
-,<Route path="/edit_profile" component={edit_profile} /> 
-,<Route path="/back_action" component={back_action} /> 
-,<Route path="/signup" component={signup} /> 
-,<Route path="/live" component={live} /> 
+<Route path="/signup" component={signup} /> 
+<Route path="/menu" component={menu} /> 
+<Route path="/history" component={history} /> 
+<Route path="/edit_profile" component={edit_profile} /> 
+<Route path="/back_action" component={back_action} /> 
+<Route path="/signup" component={signup} /> 
+<Route path="/live" component={live} /> 
 
                     </Switch>
                 </Router>
