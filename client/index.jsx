@@ -15,9 +15,10 @@
             //Parent Components
         //----------------------------------------------------------------------------------------------------------
         
-        import \iup from './components/\iup.jsx'
-import signup from './components/signup.jsx'
+        import signup from './components/signup.jsx'
 import live from './components/live.jsx'
+import composite from './components/composite.jsx'
+import sign_in from './components/sign in.jsx'
        
         //----------------------------------------------------------------------------------------------------------
         //Reducer
@@ -38,10 +39,11 @@ import live from './components/live.jsx'
         
                 <Router basename="/" history={ history } >
                     <Switch>
-                        <Route path "/" component={\iup}
-                        <Route path="/\iup" component={\iup} /> 
-,<Route path="/signup" component={signup} /> 
+                        <Route path "/" component={signup}
+                        <Route path="/signup" component={signup} /> 
 ,<Route path="/live" component={live} /> 
+,<Route path="/composite" component={composite} /> 
+,<Route path="/sign_in" component={sign_in} /> 
 
                     </Switch>
                 </Router>
