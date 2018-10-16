@@ -1,4 +1,3 @@
-
 /*
 signup view
 created by: Anni on FusionCode
@@ -7,110 +6,94 @@ created by: Anni on FusionCode
 // Component Requirements
 //----------------------------------------------------------------------------------------------------------
 
-the signup view has a status bar located at the very-top across the full width of the view
-signup view has Label located at the top left of the view, text needs identified
-signup view has Label located at the top left of the view, text needs identified
-signup view has Label located at the top left of the view, text needs identified
-signup view has Label located at the mid-top left of the view, text needs identified
-signup view has Label located at the mid-top left of the view, text needs identified
-signup view has Label located at the main area left of the view, text needs identified
-the signup view has a Pager located at the main area left of the view, correct text needs defined
-signup view has Label located at the bottom center of the view, text needs identified
-signup view has Label located at the bottom center of the view, text needs identified
+
 
 */
-        
-import React from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { Row, Col , Button } from 'reactstrap';
-        
-        
-        import { sign_up_action }  from '../actions/signupActions.js'; 
 
-        
-        
-       
-        class signupView extends React.Component {
+import React from "react"
+import { connect } from "react-redux"
+import { bindActionCreators } from "redux"
+import { Row, Col } from "reactstrap"
 
-            state = {
-                 show_loading_indicator: false,
-                
-            }
-    
-            
-            // sign_up event
-            sign_up = (value) => {
-                const { sign_up_action } = this.props
-                        e.preventDefault()
+import { sign_in_action, sign_up_action } from "../actions/signupActions.js"
 
-                        
+class signupView extends React.Component {
+  state = {
+    show_loading_indicator: false,
+    email: "",
+    password: ""
+  }
 
-                        //Dispatch action mapped to redux
-                        sign_up_action()
-                        
-                        
-                        // Change state of activity indicator
-                        this.setState({
-                            show_loading_indicator: true
-                        })
-                        
-              }    
-            
+  // sign_in event
+  sign_in = value => {
+    const { sign_in_action } = this.props
+    e.preventDefault()
 
-            componentDidMount = () => {
-                
-               
-                
-            }
-    
-        render() {
-        
-         const { show_loading_indicator } = this.state
-        const { data } = this.props
+    let sign_in_data = {}
+    sign_in_data.email = this.state.email
+    sign_in_data.password = this.state.password
 
-            return (
-                <Row>
+    //Dispatch action mapped to redux
+    sign_in_action(sign_in_data)
 
-                {!data.error_message &&
-                    show_loading_indicator === true ? <i className="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i> : 
-                    <Col md={12}>
+    // Change state of activity indicator
+    this.setState({
+      show_loading_indicator: true
+    })
+  }
+  // sign_up event
+  sign_up = value => {
+    const { sign_up_action } = this.props
+    e.preventDefault()
 
-                        				{/*<!-- TODO: Confirm label text --> */}
+    let sign_up_data = {}
+    sign_up_data.email = this.state.email
+    sign_up_data.password = this.state.password
 
-			</Col>
+    //Dispatch action mapped to redux
+    sign_up_action(sign_up_data)
 
-			<Col md={12}>
-				{/* <!-- TODO: Create unit test for \iup action --> */}
-				<Button 
-                        className="btn btn-lg btn-block " 
-                        onClick={() => this.\iup()}>\iup</Button> 
+    // Change state of activity indicator
+    this.setState({
+      show_loading_indicator: true
+    })
+  }
+  handleChange(e) {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
 
-			</Col>
+  componentDidMount = () => {}
 
+  render() {
+    const { show_loading_indicator } = this.state
+    const { data } = this.props
 
-                           
-   
-                    </Col> 
-                     } 
-                </Row>
-            )   
-        }
-    }
-                   
-    function mapStateToProps(state) {
-            return {
-                    authentication: state.authentication,
-                    data: state.signup
-                
-            }
-        }
-    
-        function mapDispatchToProps(dispatch) {
-            return bindActionCreators({ sign_up_action  }, dispatch);
-        }
-    
-   
-        export default connect(mapStateToProps, mapDispatchToProps)(signupView);
-    
-        
+    return (
+      <Row>
+        {!data.error_message && show_loading_indicator === true ? (
+          <i className="fa fa-circle-o-notch fa-spin fa-3x fa-fw" />
+        ) : (
+          <Col md={12} />
+        )}
+      </Row>
+    )
+  }
+}
+
+function mapStateToProps(state) {
+  return {
+    authentication: state.authentication,
+    data: state.signup
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ sign_in_action, sign_up_action }, dispatch)
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(signupView)
