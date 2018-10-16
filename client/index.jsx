@@ -15,10 +15,10 @@
             //Parent Components
         //----------------------------------------------------------------------------------------------------------
         
-        import live from './components/live.jsx'
-import sign_in from './components/sign_in.jsx'
+        import composite from './components/composite.jsx'
 import signup from './components/signup.jsx'
 import signup from './components/signup.jsx'
+import live from './components/live.jsx'
        
         //----------------------------------------------------------------------------------------------------------
         //Reducer
@@ -39,11 +39,11 @@ import signup from './components/signup.jsx'
         
                 <Router basename="/" history={ history } >
                     <Switch>
-                        <Route path "/" component={live}
-                        <Route path="/live" component={live} /> 
-,<Route path="/sign_in" component={sign_in} /> 
+                        <Route path "/" component={composite}
+                        <Route path="/composite" component={composite} /> 
 ,<Route path="/signup" component={signup} /> 
 ,<Route path="/signup" component={signup} /> 
+,<Route path="/live" component={live} /> 
 
                     </Switch>
                 </Router>
