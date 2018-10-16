@@ -1,0 +1,6 @@
+
+        rootProject.name = 'fusioncodevideo'
+
+        include ':app'
+        /* add slim_filename application modules here */
+        
