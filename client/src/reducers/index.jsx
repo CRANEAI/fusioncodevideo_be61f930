@@ -1,10 +1,18 @@
-import { combineReducers } from "redux"
-import { reducer as Form } from "redux-form"
 
-import composite from "./reducer_composite"
+        import { combineReducers }                      from 'redux';
+        import { reducer as Form }                      from 'redux-form';
 
-const rootReducer = combineReducers({
-  composite: composite
-})
+        import \iup from './reducer_\iup' 
+import signup from './reducer_signup' 
+import live from './reducer_live'
 
-export default rootReducer
+        const rootReducer = combineReducers({
+            \iup : \iup 
+,signup : signup 
+,live : live 
+
+        })
+
+        export default rootReducer;
+
+        
