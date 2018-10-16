@@ -15,7 +15,8 @@
             //Parent Components
         //----------------------------------------------------------------------------------------------------------
         
-        import composite from './components/composite.jsx'
+        import search from './components/search.jsx'
+import back_action from './components/back_action.jsx'
 import signup from './components/signup.jsx'
 import signup from './components/signup.jsx'
 import live from './components/live.jsx'
@@ -39,8 +40,9 @@ import live from './components/live.jsx'
         
                 <Router basename="/" history={ history } >
                     <Switch>
-                        <Route path "/" component={composite}
-                        <Route path="/composite" component={composite} /> 
+                        <Route path "/" component={search}
+                        <Route path="/search" component={search} /> 
+,<Route path="/back_action" component={back_action} /> 
 ,<Route path="/signup" component={signup} /> 
 ,<Route path="/signup" component={signup} /> 
 ,<Route path="/live" component={live} /> 
