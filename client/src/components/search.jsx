@@ -8,9 +8,30 @@ created by: Anni on FusionCode
 //----------------------------------------------------------------------------------------------------------
 
 the search view has a status bar located at the very-top across the full width of the view
-search view has Navigation Bar located at the very-top in the center of the view with text search
+search view has Navigation Bar located at the very-top in the center of the view
 the search view has a Input Box with text e located at the very-top in the center of the view
 the search will appear on focus with state is set
+the live view has a back icon located at the very-top left of the view which on click will trigger the back() action
+the live view has a search icon located at the very-top left of the view which on click will trigger the search() action
+the live view has a notification icon located at the bottom right of the view which on click will trigger the notification() action
+the signup view has a back icon located at the very-top left of the view which on click will trigger the back() action
+the signup view has a search icon located at the very-top left of the view which on click will trigger the search() action
+the signup view has a notification icon located at the bottom right of the view which on click will trigger the notification() action
+the edit profile view has a back icon located at the very-top left of the view which on click will trigger the back() action
+the edit profile view has a search icon located at the very-top left of the view which on click will trigger the search() action
+the edit profile view has a notification icon located at the bottom right of the view which on click will trigger the notification() action
+the signup view has a back icon located at the very-top left of the view which on click will trigger the back() action
+the signup view has a search icon located at the very-top left of the view which on click will trigger the search() action
+the signup view has a notification icon located at the bottom right of the view which on click will trigger the notification() action
+the back action view has a back icon located at the very-top left of the view which on click will trigger the back() action
+the back action view has a search icon located at the very-top left of the view which on click will trigger the search() action
+the back action view has a notification icon located at the bottom right of the view which on click will trigger the notification() action
+the history view has a back icon located at the very-top left of the view which on click will trigger the back() action
+the history view has a search icon located at the very-top left of the view which on click will trigger the search() action
+the history view has a notification icon located at the bottom right of the view which on click will trigger the notification() action
+the menu view has a back icon located at the very-top left of the view which on click will trigger the back() action
+the menu view has a search icon located at the very-top left of the view which on click will trigger the search() action
+the menu view has a notification icon located at the bottom right of the view which on click will trigger the notification() action
 the search view has a back icon located at the very-top left of the view which on click will trigger the back() action
 the search view has a search icon located at the very-top left of the view which on click will trigger the search() action
 the search view has a notification icon located at the bottom right of the view which on click will trigger the notification() action
@@ -269,7 +290,7 @@ import { Row, Col , Navbar, NavItem, NavbarBrand } from 'reactstrap';
                     <Col md={12}>
 
                         <Navbar color="light" light expand="md"> 
-    <NavbarBrand>search</NavbarBrand> 
+    <NavbarBrand><!-- todo: add text for navigation title --></NavbarBrand> 
 </Navbar> 
 
                            
