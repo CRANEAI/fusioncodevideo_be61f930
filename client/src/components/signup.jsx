@@ -35,7 +35,7 @@ import { bindActionCreators } from 'redux';
 import { Row, Col , Navbar, NavItem, NavbarBrand } from 'reactstrap';
         
         
-        import { sign_up_action }  from '../actions/signupActions.js'; 
+        import { sign_in_action, sign_up_action }  from '../actions/signupActions.js'; 
 
         
         
@@ -44,19 +44,24 @@ import { Row, Col , Navbar, NavItem, NavbarBrand } from 'reactstrap';
 
             state = {
                  show_loading_indicator: false,
-                
+                email : '', 
+password : '', 
+
             }
     
             
-            // sign_up event
-            sign_up = (value) => {
-                const { sign_up_action } = this.props
+            // sign_in event
+            sign_in = (value) => {
+                const { sign_in_action } = this.props
                         e.preventDefault()
 
-                        
+                        let sign_in_data      =  {};
+				sign_in_data.email   = this.state.email 
+				sign_in_data.password   = this.state.password 
+
 
                         //Dispatch action mapped to redux
-                        sign_up_action()
+                        sign_in_action(sign_in_data)
                         
                         
                         // Change state of activity indicator
@@ -64,7 +69,32 @@ import { Row, Col , Navbar, NavItem, NavbarBrand } from 'reactstrap';
                             show_loading_indicator: true
                         })
                         
-              }    
+              }
+            // sign_up event
+            sign_up = (value) => {
+                const { sign_up_action } = this.props
+                        e.preventDefault()
+
+                        let sign_up_data      =  {};
+				sign_up_data.email   = this.state.email 
+				sign_up_data.password   = this.state.password 
+
+
+                        //Dispatch action mapped to redux
+                        sign_up_action(sign_up_data)
+                        
+                        
+                        // Change state of activity indicator
+                        this.setState({
+                            show_loading_indicator: true
+                        })
+                        
+              }
+        handleChange(e) {
+            this.setState({
+                [e.target.name]: e.target.value
+            })
+        }    
             
 
             componentDidMount = () => {
@@ -107,7 +137,7 @@ import { Row, Col , Navbar, NavItem, NavbarBrand } from 'reactstrap';
         }
     
         function mapDispatchToProps(dispatch) {
-            return bindActionCreators({ sign_up_action  }, dispatch);
+            return bindActionCreators({ sign_in_action, sign_up_action  }, dispatch);
         }
     
    
