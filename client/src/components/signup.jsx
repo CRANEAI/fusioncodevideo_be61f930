@@ -7,29 +7,13 @@ created by: Anni on FusionCode
 // Component Requirements
 //----------------------------------------------------------------------------------------------------------
 
-the edit profile view has a status bar located at the very-top across the full width of the view
-edit profile view has Label located at the top center of the view, text needs identified
-edit profile view has Label located at the top center of the view, text needs identified
-edit profile view has Label located at the mid-top center of the view, text needs identified
-edit profile view has Label located at the mid-top center of the view, text needs identified
-edit profile view has Label located at the mid-top left of the view, text needs identified
-edit profile view has Label located at the mid-top left of the view, text needs identified
-edit profile view has Label located at the mid-top center of the view, text needs identified
-edit profile view has Label located at the mid-top center of the view, text needs identified
-the signup view has a home icon located at the bottom left of the view which on click will trigger the home() action
-the signup view has a profile icon located at the bottom right of the view which on click will trigger the profile() action
-the live view has a home icon located at the bottom left of the view which on click will trigger the home() action
-the live view has a profile icon located at the bottom right of the view which on click will trigger the profile() action
-the edit profile view has a home icon located at the bottom left of the view which on click will trigger the home() action
-the edit profile view has a profile icon located at the bottom right of the view which on click will trigger the profile() action
-the back action view has a home icon located at the bottom left of the view which on click will trigger the home() action
-the back action view has a profile icon located at the bottom right of the view which on click will trigger the profile() action
-the signup view has a home icon located at the bottom left of the view which on click will trigger the home() action
-the signup view has a profile icon located at the bottom right of the view which on click will trigger the profile() action
-the history view has a home icon located at the bottom left of the view which on click will trigger the home() action
-the history view has a profile icon located at the bottom right of the view which on click will trigger the profile() action
-the search view has a home icon located at the bottom left of the view which on click will trigger the home() action
-the search view has a profile icon located at the bottom right of the view which on click will trigger the profile() action
+the signup view has a status bar located at the very-top across the full width of the view
+signup view has Label located at the top left of the view, text needs identified
+signup view has Label located at the top left of the view, text needs identified
+signup view has Label located at the top left of the view, text needs identified
+signup view has Label located at the mid-top left of the view, text needs identified
+the signup view has a Pager located at the mid-top left of the view, correct text needs defined
+signup view has Label located at the bottom center of the view, text needs identified
 
 */
         
@@ -39,7 +23,7 @@ import { bindActionCreators } from 'redux';
 import { Row, Col , Button } from 'reactstrap';
         
         
-        import { sign_up_action }  from '../actions/signupActions.js'; 
+        import { sign_in_action, sign_up_action, postSignup }  from '../actions/signupActions.js'; 
 
         
         
@@ -48,19 +32,24 @@ import { Row, Col , Button } from 'reactstrap';
 
             state = {
                  show_loading_indicator: false,
-                
+                email : '', 
+password : '', 
+
             }
     
             
-            // sign_up event
-            sign_up = (value) => {
-                const { sign_up_action } = this.props
+            // sign_in event
+            sign_in = (value) => {
+                const { sign_in_action } = this.props
                         e.preventDefault()
 
-                        
+                        let sign_in_data      =  {};
+				sign_in_data.email   = this.state.email 
+				sign_in_data.password   = this.state.password 
+
 
                         //Dispatch action mapped to redux
-                        sign_up_action()
+                        sign_in_action(sign_in_data)
                         
                         
                         // Change state of activity indicator
@@ -68,7 +57,32 @@ import { Row, Col , Button } from 'reactstrap';
                             show_loading_indicator: true
                         })
                         
-              }    
+              }
+            // sign_up event
+            sign_up = (value) => {
+                const { sign_up_action } = this.props
+                        e.preventDefault()
+
+                        let sign_up_data      =  {};
+				sign_up_data.email   = this.state.email 
+				sign_up_data.password   = this.state.password 
+
+
+                        //Dispatch action mapped to redux
+                        sign_up_action(sign_up_data)
+                        
+                        
+                        // Change state of activity indicator
+                        this.setState({
+                            show_loading_indicator: true
+                        })
+                        
+              }
+        handleChange(e) {
+            this.setState({
+                [e.target.name]: e.target.value
+            })
+        }    
             
 
             componentDidMount = () => {
@@ -89,23 +103,15 @@ import { Row, Col , Button } from 'reactstrap';
                     show_loading_indicator === true ? <i className="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i> : 
                     <Col md={12}>
 
-                        				{/*<!-- TODO: Confirm label text --> */}
+                        				<Button className="btn "><!-- --></Button> 
 
 			</Col>
 
 			<Col md={12}>
-				{/* <!-- TODO: Create unit test for /_edit_profile_\ action --> */}
+				{/* <!-- TODO: Create unit test for sign_in action --> */}
 				<Button 
                         className="btn btn-lg btn-block " 
-                        onClick={() => this./_edit_profile_\()}>/ edit profile \</Button> 
-
-			</Col>
-
-			<Col md={12}>
-				{/* <!-- TODO: Create unit test for r_‘ action --> */}
-				<Button 
-                        className="btn btn-lg btn-block " 
-                        onClick={() => this.r_‘()}>r ‘</Button> 
+                        onClick={() => this.sign_in()}>sign in</Button> 
 
 			</Col>
 
@@ -128,7 +134,7 @@ import { Row, Col , Button } from 'reactstrap';
         }
     
         function mapDispatchToProps(dispatch) {
-            return bindActionCreators({ sign_up_action  }, dispatch);
+            return bindActionCreators({ sign_in_action, sign_up_action, postSignup  }, dispatch);
         }
     
    
